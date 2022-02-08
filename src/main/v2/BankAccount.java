@@ -13,6 +13,7 @@ public class BankAccount {
   }
 
   public String checkBalance() {
+    System.out.println("Your balance is: £" + df.format(balance));
     return df.format(balance);
   }
 
