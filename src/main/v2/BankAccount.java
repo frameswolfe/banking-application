@@ -38,6 +38,10 @@ public class BankAccount {
     }
   }
 
+  public ArrayList<Double> getTransactionHistory() {
+    return transactionHistory;
+  }
+
   public void checkTransactionHistory() {
     double totalDeposited = 0;
     double totalWithdrawn = 0;
