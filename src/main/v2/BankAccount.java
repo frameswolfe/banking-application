@@ -1,3 +1,4 @@
+package main.v2;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
@@ -11,8 +12,8 @@ public class BankAccount {
     this.balance = balance;
   }
 
-  public void checkBalance() {
-    System.out.println("Your balance is: £" + df.format(balance));
+  public String checkBalance() {
+    return df.format(balance);
   }
 
   public void newBalance() {
