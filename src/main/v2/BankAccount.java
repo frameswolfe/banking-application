@@ -16,28 +16,25 @@ public class BankAccount {
     return df.format(balance);
   }
 
-  public void newBalance() {
-    System.out.println("Your new balance is: £" + df.format(balance));
-  }
-
   public void deposit(double amountToDeposit) {
     if (amountToDeposit > 0) {
       balance += amountToDeposit;
       transactionHistory.add(0, amountToDeposit);
     } else if (amountToDeposit < 0) {
-      System.out.println("Would you like to make a withdrawal?");
+      throw new IllegalArgumentException("You cannot deposit a negative amount.");
     } else {
       System.out.println("Thanks for nothing...");
     }
   }
 
   public void withdraw(double amountToWithdraw) {
-    if (amountToWithdraw <= balance) {
+    if (amountToWithdraw < 0) {
+      throw new IllegalArgumentException("You cannot withdraw a negative amount.");
+    } else if (amountToWithdraw <= balance) {
       balance -= amountToWithdraw;
       transactionHistory.add(0, -amountToWithdraw);
     } else {
-      System.out.println();
-      System.out.println("Insufficient funds!");
+      System.out.println("OK...");
     }
   }
 
